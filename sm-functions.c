@@ -15,7 +15,7 @@ int main()
 
 void vegas(void)  ///Prototyping - If function is to be used before its defined.
 {
-    int a;
+    int a;    //Local variable 
 
     a = -10;
     printf("In the vegas() function, a=%d\n", a);
