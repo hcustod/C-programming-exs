@@ -21,7 +21,7 @@ int main()
 
     printf("%s was born on %d/%d/%d\n",
             president.name,     
-            president.birthday.day,   // I flipped the day with month because of fucking sense. 
+            president.birthday.day,   // I flipped the day with month because of fucking sense.  
             president.birthday.month,
             president.birthday.year);
 
