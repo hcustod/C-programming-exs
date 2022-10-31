@@ -18,6 +18,8 @@ int main()
     printf("About variable 'sidekick' (A pointer) :\n");
     printf("--------------------------\n");
     printf("Contents\t%p\n", sidekick);
+    printf("Peek into value\t%c\n", *sidekick);
+
 
     return 0; 
 }
