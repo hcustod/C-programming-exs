@@ -3,7 +3,3 @@
 
 # except these
 !.c
-
-# even if in subdirs. 
-!*/
-!*/*.c
