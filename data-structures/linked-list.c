@@ -29,7 +29,6 @@ int main() {
     insertAtStart(&head, 4);
     insertAtStart(&head, 5);
 
-
     printf("Created linked list: ");
     printList(head);
 
