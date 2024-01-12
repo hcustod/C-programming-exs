@@ -11,7 +11,10 @@ void main {
     };
 
     connect(sockfd, &addr, sizeof(addr));
-    
 
+    SSL_CTX* ctx = SSL_CTX_new(TLS_method());
+    SSL* ssl = SSL_new(ctx);
+    SSL_set_fd(ssl, sockfd);
+    SSL_connect(ssl); 
 
 }
