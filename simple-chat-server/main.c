@@ -1,4 +1,6 @@
 #include <sys/socket.h>
+#include <stdio.h>
+#include <arpa/inet.h>
 
 int main() {
     int sockfd = socket(AF_INET, SOCK_STREAM, 0);
@@ -9,7 +11,7 @@ int main() {
         0
     };
 
-    bind(sockfd, &addr, sizeof(address));
+    bind(sockfd, &addr, sizeof(address));  // will be rewritten with connect.
 
     listen(sockfd, 10);
 
@@ -28,14 +30,19 @@ int main() {
         }
     };
 
-    char buffer[256] = { 0 };
-    poll(fds, 2, 50000);
+    for(;;) {
+        char buffer[256] = { 0 };
+        poll(fds, 2, 50000);
 
-    if (fds[0].revents & POLLIN) {
-        read(0, buffer, 255);
-        send()
-    } else if () {
-        
+        if (fds[0].revents & POLLIN) {
+            read(0, buffer, 255);
+            send(clientfd, buffer, 255, 0);
+        } else if (fd[1].revents & POLLIN) {
+            recv(clientfd, buffer, 255, 0);
+            printf("%s\n", buffer);
+    
     }
+    }
+
 
 }
